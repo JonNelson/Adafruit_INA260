@@ -80,7 +80,7 @@ bool Adafruit_INA260::begin(uint8_t i2c_address, TwoWire *theWire) {
 }
 /**************************************************************************/
 /*!
-    @brief Resets the harware. All registers are set to default values,
+    @brief Resets the hardware. All registers are set to default values,
     the same as a power-on reset.
 */
 /**************************************************************************/
