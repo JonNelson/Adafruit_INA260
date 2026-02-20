@@ -80,6 +80,9 @@ bool Adafruit_INA260::begin(uint8_t i2c_address, TwoWire *theWire) {
     delete device_id;
     delete mfg_register;
     delete die_register;
+    i2c_dev->end();
+    delete i2c_dev;
+    i2c_dev = nullptr;
     return false;
   }
   delete device_id;
@@ -115,6 +118,7 @@ void Adafruit_INA260::close(void) {
     Config = nullptr;
   }
   if (i2c_dev != nullptr) {
+    i2c_dev->end();
     delete i2c_dev;
     i2c_dev = nullptr;
   }
